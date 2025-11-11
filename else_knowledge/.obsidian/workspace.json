@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "9a3e96920aeb32fc",
+        "id": "a914212d12dc7979",
         "type": "tabs",
         "children": [
           {
-            "id": "520e67574bd066fc",
+            "id": "cd87232aec06dc7f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Vehicle Mass and Road Slope Estimation.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Vehicle Mass and Road Slope Estimation"
             }
           }
         ]
@@ -37,7 +42,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -57,7 +62,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -74,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 204.5
+    "width": 200
   },
   "right": {
     "id": "2da51e6dfa21bfa5",
@@ -85,34 +90,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d79818a2f5bbb874",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks"
-            }
-          },
-          {
             "id": "1ecbfe941e869a82",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Vehicle Mass and Road Slope Estimation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Vehicle Mass and Road Slope Estimation 的出链列表"
             }
           },
           {
@@ -131,17 +119,37 @@
             }
           },
           {
-            "id": "56da5eb91542f2b7",
+            "id": "d05dd43da48b73fb",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Vehicle Mass and Road Slope Estimation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Vehicle Mass and Road Slope Estimation 的大纲"
+            }
+          },
+          {
+            "id": "ca5ae7a805706af8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Pasted image 20251111170110.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pasted image 20251111170110"
             }
           }
         ]
@@ -159,11 +167,33 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "520e67574bd066fc",
+  "active": "cd87232aec06dc7f",
   "lastOpenFiles": [
+    "attachments/Longitudinal Kinematic Model.png",
+    "attachments/Longitudinal Dynamic Model.png",
+    "Vehicle Mass and Road Slope Estimation.md",
+    "Plugins Used.md",
+    "attachments",
+    "附件/Pasted image 20251111170635.png",
+    "附件",
+    "Pasted image 20251111170110.png",
+    "Excalidraw/Drawing 2025-11-11 16.52.58.excalidraw.md",
+    "Excalidraw/Drawing 2025-11-11 13.55.44.excalidraw.md",
+    "Excalidraw/Vehicle Mass and Road Slope Estimation 2025-11-11 13.56.38.excalidraw.md",
+    "Excalidraw/Drawing 2025-11-11 13.56.14.excalidraw.md",
+    "Excalidraw",
+    "未命名.canvas",
+    "1.md",
+    "MasterPlates/universal_template.md",
+    "未命名.md",
+    "MasterPlates/universal_template.mdx",
+    "MasterPlates",
+    "MasterPlate",
+    "untitled folder",
     "Untitled.base",
     "Welcome.md"
   ]
