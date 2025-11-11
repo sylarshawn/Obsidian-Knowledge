@@ -1,2 +1,12 @@
 .obsidian/cache/
 .trash/
+# 系统缓存文件
+.DS_Store                    # macOS文件元数据
+Thumbs.db                    # Windows缩略图缓存
+*.swp                        # Vim交换文件
+.vscode/                     # VSCode项目配置
+
+# 构建产物
+node_modules/                # npm依赖（插件开发时使用）
+main.js                      # 插件构建输出
+*.js.map                     # 源码映射文件

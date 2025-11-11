@@ -11,10 +11,15 @@
             "id": "cd87232aec06dc7f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Vehicle Mass and Road Slope Estimation.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Vehicle Mass and Road Slope Estimation"
             }
           }
         ]
@@ -168,9 +173,9 @@
   },
   "active": "cd87232aec06dc7f",
   "lastOpenFiles": [
-    "Vehicle Mass and Road Slope Estimation.md",
     "attachments/Longitudinal Kinematic Model.png",
     "attachments/Longitudinal Dynamic Model.png",
+    "Vehicle Mass and Road Slope Estimation.md",
     "Plugins Used.md",
     "attachments",
     "附件/Pasted image 20251111170635.png",
