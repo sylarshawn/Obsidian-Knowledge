@@ -1,6 +1,7 @@
 ---
-aliases: 
-tags: 
+aliases:
+tags:
+  - plugins
 time: 11/11/2025 10:25
 ---
 **Plugins used in Obsidian.**
