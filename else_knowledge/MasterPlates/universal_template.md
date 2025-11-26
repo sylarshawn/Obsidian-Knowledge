@@ -1,5 +1,7 @@
 ---
-aliases: 
-tags: 
-time: {{time:MM/DD/YYYY HH:mm}}
+aliases:
+tags:
+  - template
+time:
+  "{ time:MM/DD/YYYY HH:mm }":
 ---
