@@ -1,0 +1,11 @@
+{
+  "cssTheme": "",
+  "theme": "system",
+  "baseFontSize": 16,
+  "baseFontSizeAction": false,
+  "monospaceFontFamily": "Monaco",
+  "showViewHeader": false,
+  "textFontFamily": "Times New Roman,STSong,STFangsong",
+  "interfaceFontFamily": "Times New Roman,STSong",
+  "enabledCssSnippets": []
+}

@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "8f3a54b9b6d834e2",
+        "id": "fea93996a97ad3ca",
         "type": "tabs",
         "children": [
           {
-            "id": "3ec9fece898bec79",
+            "id": "873d867f54865618",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/最小二乘法.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "最小二乘法"
             }
           }
         ]
@@ -166,29 +171,30 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "3ec9fece898bec79",
+  "active": "873d867f54865618",
   "lastOpenFiles": [
-    "Math/Matrix Theory/矩阵导数.md",
-    "Algorithm/最小二乘法.md",
-    "Math/Matrix Theory/正规方程.md",
+    "Plugins Used.md",
     "基于递归最小二乘法的车辆质量估计.md",
     "Math/Probability Theory/正态分布.md",
-    "MasterPlates/algorithm_template.md",
-    "MasterPlates/PRINCIPLE.md",
-    "MasterPlates/universal_template.md",
+    "Math/Matrix Theory/矩阵导数.md",
+    "Math/Matrix Theory/正规方程.md",
     "Math/Probability Theory",
     "Math/Matrix Theory",
+    "Math",
+    "MasterPlates/algorithm_template.md",
+    "MasterPlates/PRINCIPLE.md",
+    "Algorithm/最小二乘法.md",
+    "Algorithm",
+    "Vehicle Mass and Road Slope Estimation.md",
+    "MasterPlates/universal_template.md",
     "未命名.base",
     "Codes/Least Squares Method/test_LSM.py",
     "Codes/Least Squares Method/LSM.py",
     "Codes/Least Squares Method",
     "Codes",
-    "Math",
     "Algorithm/递归最小二乘算法.md",
     "MasterPlates/attachments/Pasted image 20251124192417.png",
     "MasterPlates/attachments",
-    "Plugins Used.md",
-    "Algorithm",
     "Vehicle Mass and Road Slope Estimation 1.md",
     "attachments/Longitudinal Kinematic Model.png",
     "attachments/Longitudinal Dynamic Model.png",
