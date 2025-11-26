@@ -5,7 +5,7 @@ time: 11/11/2025 10:25
 ---
 **Plugins used in Obsidian.**
 
-Antidote Grammer Checker Integration
+Antidote Grammar Checker Integration
 : Version 2.1.2. By Heziode
 
 cMenu
