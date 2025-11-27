@@ -2,7 +2,7 @@
 aliases:
 tags:
   - Math
-  - template
+  - Algorithm
 time:
 ---
 **摘要**
