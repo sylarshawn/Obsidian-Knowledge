@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/递归最小二乘法.md",
+                "file": "Algorithm/最小二乘法.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "递归最小二乘法"
+              "title": "最小二乘法"
             }
           }
         ]
@@ -173,13 +173,13 @@
   },
   "active": "8464506af91530c5",
   "lastOpenFiles": [
-    "Math/Matrix Theory/Sherman-Morrison公式.md",
-    "attachments/Sherman-Morrison公式.pdf",
-    "Math/Matrix Theory/正规方程.md",
-    "Math/Matrix Theory/矩阵导数.md",
-    "MasterPlates/algorithm_template.md",
     "Algorithm/递归最小二乘法.md",
     "Algorithm/最小二乘法.md",
+    "Math/Matrix Theory/Sherman-Morrison公式.md",
+    "Math/Matrix Theory/矩阵导数.md",
+    "Math/Matrix Theory/正规方程.md",
+    "attachments/Sherman-Morrison公式.pdf",
+    "MasterPlates/algorithm_template.md",
     "基于递归最小二乘法的车辆质量估计.md",
     "MasterPlates/PRINCIPLE.md",
     "MasterPlates/universal_template.md",
