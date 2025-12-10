@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "80eac429070643d3",
+        "id": "bb5f860111427872",
         "type": "tabs",
         "children": [
           {
-            "id": "8464506af91530c5",
+            "id": "49ca408755568cb6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/最小二乘法.md",
+                "file": "Algorithm/卡尔曼滤波.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "最小二乘法"
+              "title": "卡尔曼滤波"
             }
           }
         ]
@@ -171,44 +171,53 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "8464506af91530c5",
+  "active": "49ca408755568cb6",
   "lastOpenFiles": [
+    "Algorithm/卡尔曼滤波.md",
+    "Math/Probability Theory/贝叶斯估计.md",
+    "Math/Probability Theory/无偏估计.md",
+    "Math/Probability Theory/正态分布.md",
+    "Math/Probability Theory/方差.md",
     "Algorithm/递归最小二乘法.md",
+    "Algorithm/状态观测器.md",
     "Algorithm/最小二乘法.md",
-    "Math/Matrix Theory/Sherman-Morrison公式.md",
-    "Math/Matrix Theory/矩阵导数.md",
+    "Physics/无人车纵向动力学.md",
+    "Physics/空气阻力-风阻.md",
+    "Math/Probability Theory/数学期望.md",
     "Math/Matrix Theory/正规方程.md",
-    "attachments/Sherman-Morrison公式.pdf",
-    "MasterPlates/algorithm_template.md",
+    "Math/Matrix Theory/谢尔曼-莫里森公式.md",
+    "attachments/Kalman Filter Frame.png",
+    "Math/Matrix Theory/矩阵导数.md",
+    "attachments/有偏估计-小方差.png",
+    "attachments/无偏估计-大方差.png",
+    "Math/Probability Theory/attachments/Pasted image 20251206142923.png",
+    "Math/Probability Theory/attachments/Pasted image 20251206142855.png",
+    "attachments/Longitudinal Dynamic Model.png",
+    "Math/Probability Theory/attachments",
+    "Plugins Used.md",
     "基于递归最小二乘法的车辆质量估计.md",
-    "MasterPlates/PRINCIPLE.md",
+    "attachments/Longitudinal Kinematic Model.png",
     "MasterPlates/universal_template.md",
+    "MasterPlates/physics_templata.md",
+    "MasterPlates/math_template.md",
+    "MasterPlates/algorithm_template.md",
+    "MasterPlates/PRINCIPLE.md",
+    "Physics",
+    "Math/未命名",
+    "attachments/Sherman-Morrison公式.pdf",
     "2025/11/27.md",
     "2025/11",
     "2025",
-    "attachments/Longitudinal Kinematic Model.png",
-    "attachments/Longitudinal Dynamic Model.png",
-    "Plugins Used.md",
-    "Math/Probability Theory/正态分布.md",
     "Math/Probability Theory",
     "Math/Matrix Theory",
     "Math",
     "Algorithm",
     "Vehicle Mass and Road Slope Estimation.md",
-    "未命名.base",
-    "Codes/Least Squares Method/test_LSM.py",
-    "Codes/Least Squares Method/LSM.py",
     "Algorithm/递归最小二乘算法.md",
     "MasterPlates/attachments/Pasted image 20251124192417.png",
     "Vehicle Mass and Road Slope Estimation 1.md",
     "附件/Pasted image 20251111170635.png",
     "Pasted image 20251111170110.png",
-    "Excalidraw/Drawing 2025-11-11 16.52.58.excalidraw.md",
-    "Excalidraw/Drawing 2025-11-11 13.55.44.excalidraw.md",
-    "Excalidraw/Vehicle Mass and Road Slope Estimation 2025-11-11 13.56.38.excalidraw.md",
-    "Excalidraw/Drawing 2025-11-11 13.56.14.excalidraw.md",
-    "未命名.canvas",
-    "1.md",
-    "Welcome.md"
+    "未命名.canvas"
   ]
 }

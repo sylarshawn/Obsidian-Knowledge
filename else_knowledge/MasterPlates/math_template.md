@@ -1,7 +1,7 @@
 ---
 aliases:
 tags:
-  - Algorithm
+  - Math
 time:
 ---
 **摘要**

@@ -2,5 +2,6 @@
 aliases:
 tags:
 time:
-  "{ time:MM/DD/YYYY HH:mm }":
 ---
+**摘要**
+此模版仅作为基础模版，用于生成其他模版文件。

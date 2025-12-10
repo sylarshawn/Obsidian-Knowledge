@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025/11/26.md",
+                "file": "2025/11/25.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "26"
+              "title": "25"
             }
           }
         ]
@@ -173,13 +173,17 @@
   },
   "active": "873d867f54865618",
   "lastOpenFiles": [
+    "2025/12/04.md",
+    "2025/12/03.md",
+    "2025/12/02.md",
+    "2025/11/25.md",
+    "2025/12",
+    "2025/11/26.md",
     "2025/11/17.md",
     "2025/11/19.md",
     "2025/11/21.md",
     "2025/11/20.md",
     "2025/11/24.md",
-    "2025/11/25.md",
-    "2025/11/26.md",
     "Plugins Used.md",
     "基于递归最小二乘法的车辆质量估计.md",
     "Math/Probability Theory/正态分布.md",
@@ -201,7 +205,6 @@
     "Codes",
     "Algorithm/递归最小二乘算法.md",
     "MasterPlates/attachments/Pasted image 20251124192417.png",
-    "MasterPlates/attachments",
     "Vehicle Mass and Road Slope Estimation 1.md",
     "attachments/Longitudinal Kinematic Model.png",
     "attachments/Longitudinal Dynamic Model.png",
@@ -211,8 +214,6 @@
     "Excalidraw/Drawing 2025-11-11 13.55.44.excalidraw.md",
     "Excalidraw/Vehicle Mass and Road Slope Estimation 2025-11-11 13.56.38.excalidraw.md",
     "Excalidraw/Drawing 2025-11-11 13.56.14.excalidraw.md",
-    "未命名.canvas",
-    "1.md",
-    "Welcome.md"
+    "未命名.canvas"
   ]
 }

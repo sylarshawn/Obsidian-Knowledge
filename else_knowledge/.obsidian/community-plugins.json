@@ -1,5 +1,8 @@
 [
   "obsidian-excalidraw-plugin",
   "image-captions",
-  "better-export-pdf"
+  "better-export-pdf",
+  "persistent-links",
+  "tag-wrangler",
+  "obsidian-copy-block-link"
 ]
