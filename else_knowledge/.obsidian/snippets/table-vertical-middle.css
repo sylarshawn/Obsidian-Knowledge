@@ -1,0 +1,7 @@
+body {
+    --table-cell-vertical-alignment: middle;
+}
+
+.table-cell-wrapper {
+    display: table-cell;
+}

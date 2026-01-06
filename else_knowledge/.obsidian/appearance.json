@@ -2,10 +2,11 @@
   "cssTheme": "",
   "theme": "system",
   "baseFontSize": 16,
-  "baseFontSizeAction": false,
+  "baseFontSizeAction": true,
   "monospaceFontFamily": "Monaco",
   "showViewHeader": false,
-  "textFontFamily": "Times New Roman,STSong,STFangsong",
+  "textFontFamily": "Times New Roman,Source Han Serif CN",
   "interfaceFontFamily": "Times New Roman,STSong",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "translucency": true
 }
