@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025/11/25.md",
+                "file": "2026/01/12.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "25"
+              "title": "12"
             }
           }
         ]
@@ -173,10 +173,13 @@
   },
   "active": "873d867f54865618",
   "lastOpenFiles": [
+    "2025/11/25.md",
+    "2026/01/12.md",
+    "2026/01",
+    "2026",
     "2025/12/04.md",
     "2025/12/03.md",
     "2025/12/02.md",
-    "2025/11/25.md",
     "2025/12",
     "2025/11/26.md",
     "2025/11/17.md",
@@ -201,8 +204,6 @@
     "未命名.base",
     "Codes/Least Squares Method/test_LSM.py",
     "Codes/Least Squares Method/LSM.py",
-    "Codes/Least Squares Method",
-    "Codes",
     "Algorithm/递归最小二乘算法.md",
     "MasterPlates/attachments/Pasted image 20251124192417.png",
     "Vehicle Mass and Road Slope Estimation 1.md",
@@ -213,7 +214,6 @@
     "Excalidraw/Drawing 2025-11-11 16.52.58.excalidraw.md",
     "Excalidraw/Drawing 2025-11-11 13.55.44.excalidraw.md",
     "Excalidraw/Vehicle Mass and Road Slope Estimation 2025-11-11 13.56.38.excalidraw.md",
-    "Excalidraw/Drawing 2025-11-11 13.56.14.excalidraw.md",
     "未命名.canvas"
   ]
 }

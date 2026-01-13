@@ -1,10 +1,11 @@
 {
-  "outline:open-for-current": [
+  "obsidian-excalidraw-plugin:save": [
     {
       "modifiers": [
-        "Ctrl"
+        "Mod",
+        "Shift"
       ],
-      "key": "O"
+      "key": "S"
     }
   ]
 }
