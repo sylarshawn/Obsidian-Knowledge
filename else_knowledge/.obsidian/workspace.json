@@ -79,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b1ae2e1ced2bbb43",
@@ -171,6 +170,11 @@
   },
   "active": "b9163aae657a3ef3",
   "lastOpenFiles": [
+    "copilot/copilot-custom-prompts/Explain like I am 5.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "copilot/copilot-conversations/License_Error_Resolved@20260402_135644.md",
+    "Physics/Dynamics/Clohessy-Wiltshire方程.md",
     "Physics/Foundation/旋转矢量微分法则.md",
     "Math/Matrix Theory/Advanced/谢尔曼-莫里森公式.md"
   ]
