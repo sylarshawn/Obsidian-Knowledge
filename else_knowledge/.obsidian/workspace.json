@@ -21,8 +21,54 @@
               "icon": "lucide-file",
               "title": "Clohessy-Wiltshire方程"
             }
+          },
+          {
+            "id": "fa537db2967a3c02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math/Mathematical Analysis/泛函极值.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "泛函极值"
+            }
+          },
+          {
+            "id": "5517cf5be05d675c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math/Mathematical Analysis/多元函数极值.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "多元函数极值"
+            }
+          },
+          {
+            "id": "253431a47fa0592f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/卡尔曼滤波.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "卡尔曼滤波"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -79,7 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 276.5
   },
   "right": {
     "id": "b1ae2e1ced2bbb43",
@@ -168,14 +214,39 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "b9163aae657a3ef3",
+  "active": "253431a47fa0592f",
   "lastOpenFiles": [
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
-    "copilot/copilot-custom-prompts/Clip Web Page.md",
-    "copilot/copilot-conversations/License_Error_Resolved@20260402_135644.md",
+    "Algorithm/状态观测器.md",
+    "Algorithm/卡尔曼滤波.md",
+    "Algorithm/递归最小二乘法.md",
+    "Physics/Coordinates/天文学基本术语解析.md",
+    "Physics/Coordinates/LVLH-本地垂直-本地水平坐标系.md",
+    "Physics/Coordinates/ECI-地心惯性坐标系.md",
+    "Physics/Coordinates/坐标系.md",
     "Physics/Dynamics/Clohessy-Wiltshire方程.md",
+    "Physics/Foundation/二体问题.md",
+    "Physics/Foundation/角动量.md",
+    "Physics/Foundation/开普勒第一定律.md",
+    "Physics/Foundation/万有引力定律.md",
     "Physics/Foundation/旋转矢量微分法则.md",
-    "Math/Matrix Theory/Advanced/谢尔曼-莫里森公式.md"
+    "Physics/Foundation/状态转移矩阵.md",
+    "Plugins Used.md",
+    "Physics/Dynamics/无人车纵向动力学.md",
+    "attachments/Longitudinal Dynamic Model.png",
+    "attachments/Longitudinal Kinematic Model.png",
+    "attachments/Kalman Filter Frame.png",
+    "attachments/Coordinate System Conversion.png",
+    "attachments/Celestial Sphere.png",
+    "MasterPlates/universal_template.md",
+    "MasterPlates/physics_templata.md",
+    "MasterPlates/math_template.md",
+    "MasterPlates/algorithm_template.md",
+    "Math/Matrix Theory/正规方程.md",
+    "Math/Matrix Theory/谢尔曼-莫里森公式.md",
+    "Math/Matrix Theory/特征值与特征向量.md",
+    "Math/Matrix Theory/矩阵条件数.md",
+    "Math/Matrix Theory/矩阵奇异值.md",
+    "Math/Matrix Theory/矩阵迹.md",
+    "Math/Matrix Theory/标准型矩阵"
   ]
 }

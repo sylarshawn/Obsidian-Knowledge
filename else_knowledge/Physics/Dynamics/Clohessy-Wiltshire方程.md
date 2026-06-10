@@ -385,3 +385,11 @@ $$
 
 对于线性时不变系统$\boldsymbol{\dot{X}} = \boldsymbol{A}\boldsymbol{X}$，其状态转移矩阵为矩阵指数函数：
 
+$$
+\begin{aligned}
+	\boldsymbol{\Phi}(\tau) = e^{\boldsymbol{A}\,\tau},\,\,\tau=t-t_0
+\end{aligned}
+\tag{28}
+$$
+
+其中，$t_0,\,t$分别为初始时刻和当前时刻，$\tau$是两者的时间间隔。
