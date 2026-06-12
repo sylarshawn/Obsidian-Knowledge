@@ -58,13 +58,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/卡尔曼滤波.md",
+                "file": "Physics/Dynamics/Clohessy-Wiltshire方程.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "卡尔曼滤波"
+              "title": "Clohessy-Wiltshire方程"
             }
           }
         ],
@@ -125,7 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5
+    "width": 233.5
   },
   "right": {
     "id": "b1ae2e1ced2bbb43",
@@ -216,14 +216,15 @@
   },
   "active": "253431a47fa0592f",
   "lastOpenFiles": [
-    "Algorithm/状态观测器.md",
+    "Math/Matrix Theory/矩阵分解.md",
+    "Physics/Dynamics/Clohessy-Wiltshire方程.md",
+    "Physics/Coordinates/ECI-地心惯性坐标系.md",
     "Algorithm/卡尔曼滤波.md",
+    "Algorithm/状态观测器.md",
     "Algorithm/递归最小二乘法.md",
     "Physics/Coordinates/天文学基本术语解析.md",
     "Physics/Coordinates/LVLH-本地垂直-本地水平坐标系.md",
-    "Physics/Coordinates/ECI-地心惯性坐标系.md",
     "Physics/Coordinates/坐标系.md",
-    "Physics/Dynamics/Clohessy-Wiltshire方程.md",
     "Physics/Foundation/二体问题.md",
     "Physics/Foundation/角动量.md",
     "Physics/Foundation/开普勒第一定律.md",
@@ -246,7 +247,6 @@
     "Math/Matrix Theory/特征值与特征向量.md",
     "Math/Matrix Theory/矩阵条件数.md",
     "Math/Matrix Theory/矩阵奇异值.md",
-    "Math/Matrix Theory/矩阵迹.md",
     "Math/Matrix Theory/标准型矩阵"
   ]
 }

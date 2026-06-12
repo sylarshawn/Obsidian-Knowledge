@@ -393,3 +393,129 @@ $$
 $$
 
 其中，$t_0,\,t$分别为初始时刻和当前时刻，$\tau$是两者的时间间隔。
+通过[[矩阵分解#特征值分解|矩阵特征值分解]]求解矩阵指数，结合[[Clohessy-Wiltshire方程]]在轨道面内与轨道面外解耦的特性（即$z$方向的运动与$x\text{-}y$平面的运动完全独立），可以得到$\boldsymbol{\Phi}(\tau)$的解析分块对角形式：
+
+$$
+\boldsymbol{\Phi}(\tau) = \begin{bmatrix}
+\boldsymbol{\Phi}_{x\,y}(\tau)& \boldsymbol{0}_{4\times 2}\\
+\boldsymbol{0}_{2\times 4}& \boldsymbol{\Phi}_z(\tau)
+\end{bmatrix}
+\tag{29}
+$$
+
+其中，轨道面$x\text{-}y$的子矩阵$\boldsymbol{\Phi}_{x\,y}(\tau)$为
+
+$$
+\boldsymbol{\Phi}_{x\,y}(\tau) = \begin{bmatrix}
+4-3\,\cos(n\,\tau) & 0 & \sin(n\,\tau)/n & 2\,(1-\cos(n\,\tau))/n \\
+6\,(\sin(n\,\tau)-n\,\tau) & 1 & 2\,(\cos(n\,\tau)-1)/n & (4\,\sin(n\,\tau)-3\,n\,\tau)/n \\
+3\,n\,\sin(n\,\tau) & 0 & \cos(n\,\tau) & 2\,\sin(n\,\tau) \\
+6\,n\,(\cos(n\,\tau)-1) & 0 & -2\,\sin(n\,\tau) & 4\,\cos(n\,\tau)-3
+\end{bmatrix}
+$$
+
+轨道面外$z$方向的子矩阵$\boldsymbol{\Phi}_z(\tau)$为
+
+$$
+\boldsymbol{\Phi}_{z}(\tau) = \begin{bmatrix}
+\cos(n\,\tau) & \sin(n\,\tau) \\
+-n\,\sin(n\,\tau) & \cos(n\,\tau)
+\end{bmatrix}
+$$
+
+进一步地，带控制输入的线性时不变系统的通解为：
+
+$$
+\boldsymbol{X}(t) = \boldsymbol{\Phi}(t-t_0)\,\boldsymbol{X}(t_0) + \int_{t_0}^t\boldsymbol{\Phi}(T-\tau)\,\boldsymbol{B}\,\mathrm{d}\,\tau\,\boldsymbol{u}_k
+\tag{30-1}
+$$
+
+其中，离散状态转移矩阵$\boldsymbol{\Phi}_k = \boldsymbol{\Phi}(T)$，因系统时不变，该矩阵实际与$k$无关，后文简化为$\boldsymbol{\Phi}$表示；离散控制输入矩阵$\boldsymbol{\Gamma}_k = \int_0^T\boldsymbol{\Phi}(T-t)\,\boldsymbol{B}\,\mathrm{d}\,\tau$，显然该矩阵亦与$k$无关，后文简化为$\boldsymbol{\Gamma}$表示。
+
+因此，[[Clohessy-Wiltshire方程]]的离散状态空间方程的最终形式为：
+
+$$
+\boldsymbol{X}_{k+1} = \boldsymbol{\Phi}\,\boldsymbol{X}_k+\boldsymbol{\Gamma}\,\boldsymbol{u}_k
+\tag{30-2}
+$$
+
+接下来需要对离散控制输入矩阵$\boldsymbol{\Gamma}$的元素进行分析。
+从Eq. (27)中可知，控制输入矩阵$\boldsymbol{B}$的前三行为$0$，后三行为单位矩阵，因此式Eq. (30)中的$\boldsymbol{\Phi}(T-\tau)\,\boldsymbol{B}$的前三行为$0$，后三行与$\boldsymbol{\Phi}(T-\tau)$的后三行一致。替换Eq. (30)中的积分变量为$s = T-\tau$，则有$\mathrm{d}\,\tau = -\mathrm{d}\,s$，积分上下限反转，即：
+
+$$
+\boldsymbol{\Gamma}(T) = \int_0^T\boldsymbol{\Phi}(s)\,\boldsymbol{B}\,\mathrm{d}\,s
+\tag{31-1}
+$$
+
+逐项计算离散控制输入矩阵$\boldsymbol{\Gamma}$的元素：
+
+$x$方向控制输入：
+$$
+\begin{aligned}
+	\Gamma_{11} &= \int_0^T \frac{\sin(ns)}{n}\mathrm{d}s = \frac{1-\cos(nT)}{n^2}\\
+	\Gamma_{21} &= \int_0^T \frac{2(\cos(ns)-1)}{n}\mathrm{d}s = \frac{2(\sin(nT)-nT)}{n^2}\\
+	\Gamma_{31} &= 0\\
+	\Gamma_{41} &= \int_0^T \cos(ns)\mathrm{d}s = \frac{\sin(nT)}{n}\\
+	\Gamma_{51} &= \int_0^T -2\sin(ns)\mathrm{d}s = \frac{2(\cos(nT)-1)}{n}\\
+	\Gamma_{61} &= 0
+\end{aligned}
+\tag{31-2}
+$$
+
+$y$方向控制输入：
+
+$$
+\begin{aligned}
+	\Gamma_{12} &= \int_0^T \frac{2(1-\cos(ns))}{n}\mathrm{d}s = \frac{2(nT-\sin(nT))}{n^2}\\
+	\Gamma_{22} &= \int_0^T \frac{4\sin(ns)-3ns}{n}\mathrm{d}s = \frac{4(1-\cos(nT))-\frac{3}{2}n^2T^2}{n^2}\\
+	\Gamma_{32} &= 0\\
+	\Gamma_{42} &= \int_0^T 2\sin(ns)\mathrm{d}s = \frac{2(1-\cos(nT))}{n}\\
+	\Gamma_{52} &= \int_0^T (4\cos(ns)-3)\mathrm{d}s = \frac{4\sin(nT)-3nT}{n}\\
+	\Gamma_{62} &= 0
+\end{aligned}
+\tag{31-3}
+$$
+
+
+$z$方向控制输入：
+
+$$
+\begin{aligned}
+	\Gamma_{13} &= 0\\
+	\Gamma_{23} &= 0\\
+	\Gamma_{33} &= \int_0^T \frac{\sin(ns)}{n}\mathrm{d}s = \frac{1-\cos(nT)}{n^2}\\
+	\Gamma_{43} &= 0\\
+	\Gamma_{53} &= 0\\
+	\Gamma_{63} &= \int_0^T \cos(ns)\mathrm{d}s = \frac{\sin(nT)}{n}
+\end{aligned}
+\tag{31-4}
+$$
+
+结合 Eqs. (30-3), (30-4), (30-5)，离散控制输入矩阵$\boldsymbol{\Gamma}$可以整理为：
+
+$$
+\boldsymbol{\Gamma}(T) = 
+\begin{bmatrix}
+	(1-\cos(n\,T))/n^2 & 2\,(n\,T-\sin(n\,T))/n^2 & 0\\
+	2\,(\sin(n\,T)-n\,T)/n^2 & (4\,(1-\cos(n\,T))-1.5\,n^2\,T^2)/n^2 & 0\\
+	0 & 0 & (1-\cos(n\,T))/n^2\\
+	\sin(n\,T)/n & 2\,(1-\cos(n\,T))/n & 0\\
+	2\,(\cos(n\,T)-1)/n & (4\,\sin(n\,T)-3\,n\,T)/n & 0\\
+	0 & 0 & \sin(n\,T)/n
+\end{bmatrix}
+\tag{31-5}
+$$
+
+同时，由于该方程显得十分复杂，可以进行极限一致性检验。当采样周期$T\rightarrow 0$时，利用下述泰勒展开：
+
+$$
+\cos(n\,T) \approx 1-\ \frac{(n\,T)^2}{2},\,\,\sin(n\,T) \approx n\,T
+$$
+
+可得：
+
+$$
+\boldsymbol{\Phi}(T) = \boldsymbol{I} + \boldsymbol{A}\,T,\,\,\boldsymbol{\Gamma(T)} \approx \boldsymbol{B}\,T
+$$
+
+即与Eq. (27)一致，可以判定基本正确。
