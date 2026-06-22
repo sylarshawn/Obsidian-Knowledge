@@ -1,4 +1,6 @@
 .obsidian/cache/
+.obsidian/plugins/
+.obsidian/history/
 .trash/
 # 系统缓存文件
 .DS_Store                    # macOS文件元数据
