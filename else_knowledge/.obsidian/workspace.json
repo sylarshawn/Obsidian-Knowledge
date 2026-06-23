@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "12ad8b4a6504d357",
+        "id": "8166435f7bdab386",
         "type": "tabs",
         "children": [
           {
-            "id": "e15327945cffed5e",
+            "id": "f3fe7ee8eb800d6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -79,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 324.5
+    "width": 307.5
   },
   "right": {
     "id": "b1ae2e1ced2bbb43",
@@ -168,25 +168,31 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e15327945cffed5e",
+  "active": "f3fe7ee8eb800d6b",
   "lastOpenFiles": [
-    "Physics/Kinematics and Dynamics/Tschauner-Hempel方程.md",
-    "Physics/Kinematics and Dynamics/轨道摄动方程.md",
-    "Physics/Coordinates/轨道根数-轨道六要素.md",
-    "Physics/Coordinates/坐标系.md",
     "Physics/Coordinates/天文学基本术语解析.md",
+    "Physics/Coordinates/轨道根数-轨道六要素.md",
+    "Physics/Kinematics and Dynamics/Clohessy-Wiltshire方程.md",
+    "Physics/Kinematics and Dynamics/无人车纵向动力学.md",
+    "Physics/Kinematics and Dynamics/空气阻力-风阻.md",
+    "attachments/Celestial Sphere.png",
+    "attachments/Orbital Roots Diagram.png",
+    "coordinates.png",
+    "Physics/Kinematics and Dynamics/Tschauner-Hempel方程.md",
+    "Physics/Foundation/状态转移矩阵.md",
+    "Physics/Foundation/旋转矢量微分法则.md",
+    "Plugins Used.md",
+    "Excalidraw/Drawing 2026-06-23 17.32.47.excalidraw.md",
+    "Excalidraw",
+    "未命名.canvas",
+    "Physics/Kinematics and Dynamics/轨道摄动方程.md",
+    "Physics/Coordinates/坐标系.md",
     "Physics/Coordinates/ECI-地心惯性坐标系.md",
     "Physics/Coordinates/LVLH-本地垂直-本地水平坐标系.md",
-    "Physics/Kinematics and Dynamics/Clohessy-Wiltshire方程.md",
-    "Physics/Kinematics and Dynamics/空气阻力-风阻.md",
-    "Physics/Foundation/状态转移矩阵.md",
-    "Physics/Kinematics and Dynamics/无人车纵向动力学.md",
-    "Physics/Foundation/旋转矢量微分法则.md",
     "Physics/Foundation/万有引力定律.md",
     "Physics/Foundation/开普勒第一定律.md",
     "Physics/Foundation/角动量.md",
     "Physics/Coordinates/未命名.md",
-    "Plugins Used.md",
     "Algorithm/最小二乘法.md",
     "Algorithm/状态观测器.md",
     "Math/Matrix Theory/正规方程.md",
@@ -194,13 +200,10 @@
     "Algorithm/卡尔曼滤波.md",
     "Math/Matrix Theory/矩阵分解.md",
     "Math/Mathematical Analysis/泛函.md",
-    "Math/Matrix Theory/反对称矩阵-叉乘矩阵.md",
-    "Physics/Foundation/二体问题.md",
     "attachments/Longitudinal Dynamic Model.png",
     "attachments/Longitudinal Kinematic Model.png",
     "attachments/Kalman Filter Frame.png",
     "attachments/Coordinate System Conversion.png",
-    "attachments/Celestial Sphere.png",
     "Math/Matrix Theory/标准型矩阵"
   ]
 }
