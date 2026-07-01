@@ -263,7 +263,7 @@ $$
 
 $$
 \left\{\begin{matrix}\begin{aligned}
-&\ddot{x}-2\,n\,y-3\,n^2\,x=0\\
+&\ddot{x}-2\,n\,\dot{y}-3\,n^2\,x=0\\
 &\ddot{y}+2\,n\,\dot{x}=0\\
 &\ddot{z}+n^2\,z=0
 \end{aligned}\end{matrix}\right.
@@ -328,16 +328,16 @@ $$
 \tag{24-7}
 $$
 
-将Eq. (24-7)代入Eq. (24-1)中可得CW方程的矢量形式为：
+将Eq. (24-7)代入Eq. (24-1)中可得**CW方程的通用矢量形式**为：
 
 $$
 \begin{aligned}
-	\frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{B}}+2\boldsymbol{\omega}\times\frac{\mathrm{d}\,\boldsymbol{\rho}}{\mathrm{d}\,t}\Bigg|_\boldsymbol{B}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{\rho}) + n^2\,\boldsymbol{\rho} - 3\,n^2\,(\boldsymbol{\rho}\,\boldsymbol{\hat{x}})\boldsymbol{\hat{x}}=0
+	\frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{B}}+2\boldsymbol{\omega}\times\frac{\mathrm{d}\,\boldsymbol{\rho}}{\mathrm{d}\,t}\Bigg|_\boldsymbol{B}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{\rho}) + n^2\,\boldsymbol{\rho} - 3\,n^2\,(\boldsymbol{\rho}\,\boldsymbol{\hat{x}})\boldsymbol{\hat{x}} = \boldsymbol{0}
 \end{aligned}
 \tag{25}
 $$
 
-#### 状态空间方程形式
+## CW状态空间方程
 
 为便于系统规划和控制，可以将CW方程写作一阶线性状态空间方程的形式。定义相对运动状态矢量为：
 
@@ -541,7 +541,7 @@ $$
 
 # 附录
 
-## 附1 关于<u>线性时不变（LTI）系统的状态转移矩阵是矩阵指数函数</u>的证明
+## 附1 关于线性时不变（LTI）系统的状态转移矩阵是矩阵指数函数的证明
 
 对于标量范畴下的一阶常微分方程$\dot{x} = a\,x(t)$，初值$x(0) = x_0$，该微分方程的解为$x(t) = \exp(a\,t)\,x_0$。
 显然，对于方程解的解释从另一个角度而言，相当于将状态从$0$时刻转移到$t$时刻的某种映射，即标量形势下的状态转移因子。
