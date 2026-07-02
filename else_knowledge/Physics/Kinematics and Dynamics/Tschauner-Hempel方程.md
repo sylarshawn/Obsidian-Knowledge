@@ -440,3 +440,88 @@ $$
 其中，$\boldsymbol{M}_{11}\in\mathbb{R}^{n\times n}$，$\boldsymbol{M}_{11}\in\mathbb{R}^{n\times m}$，$\boldsymbol{M}_{11}\in\mathbb{R}^{m\times n}$，$\boldsymbol{M}_{11}\in\mathbb{R}^{m\times m}$。
 
 以下可以通过矩阵指数的幂级数定义，分析四个分块所对应的物理意义。
+
+对任意的方阵$\boldsymbol{M}$，矩阵指数的定义为绝对收敛的幂级数：
+
+$$
+e^{\boldsymbol{M}\, T} = \sum_{k=0}^{\infty}\,\frac{(\boldsymbol{M}\,T)^k}{k!} = \boldsymbol{I} + \boldsymbol{M}\,T + \frac{(\boldsymbol{M}\,T)^2}{2!} + \frac{(\boldsymbol{M}\,T)^3}{3!} + \dots
+$$
+
+进一步地，考虑采用数学归纳法，对增广矩阵$\boldsymbol{M}_\mathrm{a}\,T$的低次幂进行计算，并寻找分块规律：
+
+$$
+\begin{aligned}
+	(\boldsymbol{M}_\mathrm{a}\,T)^0 &= \boldsymbol{I}_{n+m} = \begin{bmatrix} \boldsymbol{I}_n& \boldsymbol{0}_{n\times m}\\ \boldsymbol{0}_{m\times n}& \boldsymbol{I}_m \end{bmatrix}\\
+	(\boldsymbol{M}_\mathrm{a}\,T)^1 &= \begin{bmatrix} \boldsymbol{A}\,T& \boldsymbol{B}\,T\\ \boldsymbol{0}& \boldsymbol{0} \end{bmatrix}\\
+	(\boldsymbol{M}_\mathrm{a}\,T)^2 &= \begin{bmatrix} \boldsymbol{A}\,T& \boldsymbol{B}\,T\\ \boldsymbol{0}& \boldsymbol{0} \end{bmatrix}\,\begin{bmatrix} \boldsymbol{A}\,T& \boldsymbol{B}\,T\\ \boldsymbol{0}& \boldsymbol{0} \end{bmatrix} = \begin{bmatrix} (\boldsymbol{A}\,T)^2& \boldsymbol{A}\,T\,\boldsymbol{B}\,T\\ \boldsymbol{0}& \boldsymbol{0} \end{bmatrix}\\
+	(\boldsymbol{M}_\mathrm{a}\,T)^3 &= \begin{bmatrix} (\boldsymbol{A}\,T)^3& (\boldsymbol{A}\,T)^2\,\boldsymbol{B}\,T\\ \boldsymbol{0}& \boldsymbol{0} \end{bmatrix}
+\end{aligned}
+\tag{app-7}
+$$
+
+通过归纳分析，可以证明，对于任意整数$k\geq 1$，增广矩阵的$k$次幂满足统一形式：
+
+$$
+(\boldsymbol{M}_\mathrm{a}\,T)^k = \begin{bmatrix} (\boldsymbol{A}\,T)^k& (\boldsymbol{A}\,T)^{k-1}\,\boldsymbol{B}\,T\\ \boldsymbol{0}_{m\times n}& \boldsymbol{0}_{m\times m} \end{bmatrix}
+\tag{app-8}
+$$
+
+将上述幂次结果代入矩阵指数的幂级数展开式，按照四个分块结构分别求和。其一，所有$k$次幂的左下角均为$\boldsymbol{0}$矩阵，因此求和后仍为零矩阵，即：
+
+$$
+\boldsymbol{M}_{21} = \boldsymbol{0}_{m\times n}
+$$
+
+其二，右下角分块仅在$k=0$时有单位矩阵项，所有$k\geq 1$次幂的右下角矩阵均为零矩阵，因此有：
+
+$$
+\boldsymbol{M}_{22} = \boldsymbol{I}_m
+$$
+
+其三，左上角分块求和如下：
+
+$$
+\boldsymbol{M}_{11} = \boldsymbol{I}_{n} + \sum_{k=1}^{\infty}\frac{(\boldsymbol{A}\,T)^k}{k!} = \sum_{k=0}^{\infty}\frac{(\boldsymbol{A}\,T)^k}{k!} = e^{\boldsymbol{A}\,T} = \boldsymbol{\Phi}
+\tag{app-9}
+$$
+即恰好为原系统的离散状态转移矩阵。
+
+其四，右上角分块求和如下：
+
+$$
+\boldsymbol{M}_{12} = \sum_{k=1}^{\infty}\,\frac{1}{k!}\,(\boldsymbol{A}\,T)^{k-1}\,\boldsymbol{B}\,T
+$$
+
+令$j=k-1$，则$k=j+1$，求和下限从$k=1$变为$j=0$，即：
+
+$$
+\boldsymbol{M}_{12} = \sum_{j = 0}^{\infty}\,\frac{T^{j+1}}{(j+1)!}\,\boldsymbol{A}^j\,\boldsymbol{B} = \left( \sum_{j=0}^{\infty}\,\frac{\boldsymbol{A}^j\,T^{j+1}}{(j+1)!} \right)\,\boldsymbol{B}
+$$
+
+注意到级数项与积分的等价关系：
+
+$$
+\int_{0}^T\frac{(\boldsymbol{A}\,s)^j}{j!}\,\mathrm{d}\,s = \frac{\boldsymbol{A}^j}{j!}\,\int_{0}^T s^j\,\mathrm{d}\,s = \frac{\boldsymbol{A}^j\,T^{j+1}}{j!\,(j+1)} = \frac{\boldsymbol{A}^j\,T^{j+1}}{(j+1)!}
+$$
+
+因此级数求和等价于积分：
+
+$$
+\sum_{j=0}^\infty \frac{\boldsymbol{A}^j\,T^{j+1}}{(j+1)!} = \int_{0}^T \sum_{j=0}^{\infty}\frac{(\boldsymbol{A}\,s)^j}{j!}\,\mathrm{d}\,s = \int_0^T e^{\boldsymbol{A}\,s}\,\mathrm{d}\,s
+$$
+
+代入$\boldsymbol{M}_{12}$的整合式得：
+
+$$
+\boldsymbol{M}_{12} = \int_0^T e^{\boldsymbol{A}\,s}\,\boldsymbol{B}\,\mathrm{d}\,s = \boldsymbol{\Gamma}
+\tag{app-10}
+$$
+
+恰为原系统的离散控制输入矩阵。
+
+综上，增广矩阵的矩阵指数与离散矩阵存在严格的分块对应关系，即：
+
+$$
+\exp\left( \begin{bmatrix} \boldsymbol{A}& \boldsymbol{B}\\\boldsymbol{0}_{m\times n}& \boldsymbol{0}_{m\times m} \end{bmatrix}\,T\right) = \begin{bmatrix}\boldsymbol{\Phi}& \boldsymbol{\Gamma}\\ \boldsymbol{0}_{m\times n}& \boldsymbol{I}_m \end{bmatrix}
+\tag{app-11}
+$$
