@@ -3,10 +3,10 @@
   "theme": "system",
   "baseFontSize": 16,
   "baseFontSizeAction": true,
-  "monospaceFontFamily": "Monaco",
+  "monospaceFontFamily": "Source Code Pro,Andale Mono",
   "showViewHeader": false,
-  "textFontFamily": "Times New Roman,Source Han Serif CN",
-  "interfaceFontFamily": "Times New Roman,STSong",
+  "textFontFamily": "Times New Roman,SimSun",
+  "interfaceFontFamily": "Times New Roman,SimSun",
   "enabledCssSnippets": [],
   "translucency": true
 }

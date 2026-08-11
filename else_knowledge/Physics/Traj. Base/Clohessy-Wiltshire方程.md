@@ -7,61 +7,61 @@ tags:
 time: 2026-03-24T16:38:00
 ---
 **摘要**
-此文档介绍航天器相对运动建模过程中，常用的线性化模型Clohessy-Wiltshire方程（简称CW方程，又称为Hill-Clohessy-Wiltshire方程），主要包括该方程的具体推导和实际应用。
+此文档介绍卫星相对运动建模过程中，常用的线性化模型Clohessy-Wiltshire方程（简称CW方程，又称为Hill-Clohessy-Wiltshire方程），主要包括该方程的具体推导和实际应用。
 
 # 概念
 
-CW方程（Clohessy-Wiltshire方程，又称为Hill-Clohessy-Wiltshire方程），1960年由Clohessy和Wiltshire两位学者提出，用于描述两个航天器之间的相对运动关系。
+CW方程（Clohessy-Wiltshire方程，又称为Hill-Clohessy-Wiltshire方程），1960年由Clohessy和Wiltshire两位学者提出，用于描述两个卫星之间的相对运动关系。
 
-简单而言，其核心应用场景为：以在圆轨道上运行的**目标航天器**（如空间站、在轨卫星，作为相对运动的参考基准）为原点建立旋转坐标系，描述**追踪航天器**（如货运飞船、交会对接飞行器、编队伴飞卫星）相对于目标航天器的位置、速度状态的演化规律。该方程广泛应用于航天器交会对接、近距离编队飞行、相对导航与轨道控制等任务场景。
+简单而言，其核心应用场景为：以在圆轨道上运行的**目标卫星**（如空间站、在轨卫星，作为相对运动的参考基准）为原点建立旋转坐标系，描述**追踪卫星**（如货运飞船、交会对接飞行器、编队伴飞卫星）相对于目标卫星的位置、速度状态的演化规律。该方程广泛应用于卫星交会对接、近距离编队飞行、相对导航与轨道控制等任务场景。
 
 # 前提假设
 
 CW方程由[[二体问题]]下的简化线性模型，其推导与应用必须严格满足以下假设，偏离假设会导致模型误差显著增大：
 
-1. **目标航天器轨道约束**：目标航天器在地球中心引力场中做**无摄动圆轨道运动**，轨道半径、轨道角速度恒定不变；
-2. **近距离相对运动约束**：追踪航天器与目标航天器的相对距离远小于目标航天器的轨道半径（工程中一般要求相对距离小于轨道半径的$1\%$），可对非线性引力项做一阶泰勒展开，忽略二阶及以上高阶小量；
+1. **目标卫星轨道约束**：目标卫星在地球中心引力场中做**无摄动圆轨道运动**，轨道半径、轨道角速度恒定不变；
+2. **近距离相对运动约束**：追踪卫星与目标卫星的相对距离远小于目标卫星的轨道半径（工程中一般要求相对距离小于轨道半径的$1\%$），可对非线性引力项做一阶泰勒展开，忽略二阶及以上高阶小量；
 3. **无摄动假设**：忽略地球以外的所有摄动影响（如大气阻力、太阳光压、第三体引力、地球非球形引力等），仅考虑地球中心引力的作用；
-4. **质点假设**：将目标航天器与追踪航天器均视为质点，忽略航天器自身姿态运动、结构挠性对相对运动的影响；
-5. **坐标系旋转约束**：相对运动的参考坐标系（LVLH 系）与目标航天器轨道固连，随目标航天器同步做圆轨道运动，无额外的姿态旋转。
+4. **质点假设**：将目标卫星与追踪卫星均视为质点，忽略卫星自身姿态运动、结构挠性对相对运动的影响；
+5. **坐标系旋转约束**：相对运动的参考坐标系（LVLH 系）与目标卫星轨道固连，随目标卫星同步做圆轨道运动，无额外的姿态旋转。
 
 # 符号约定
 
 为避免符号冲突与概念混淆，本文采用如下符号体系：
 
-| 符号                    | 物理含义                                                                                                                  |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| $G$                   | 万有引力常数                                                                                                                |
-| $M$                   | 地球质量                                                                                                                  |
-| $\mu$                 | 地球引力常数，$\mu=GM\approx 3.986004418\times 10^14\mathrm{m^3/s^2}$                                                        |
-| $\boldsymbol{r}_t$    | 目标航天器相对于地心的位置矢量（[[ECI-地心惯性坐标系]]下），标量模长$r_t=\Vert\boldsymbol{r}_t\Vert$                                                |
-| $\boldsymbol{r}_c$    | 追踪航天器相对于地心的位置矢量（[[ECI-地心惯性坐标系]]下），标量模长$r_c=\Vert\boldsymbol{r}_c\Vert$                                                |
-| $\boldsymbol{\rho}$   | 追踪航天器相对于目标航天器的相对位置矢量，满足$\boldsymbol{\rho}=\boldsymbol{r}_c-\boldsymbol{r}_t$，标量模长$\rho=\Vert \boldsymbol{\rho} \Vert$ |
-| $n$                   | 目标航天器的轨道平均角速度，圆轨道下为恒定值                                                                                                |
-| $\boldsymbol{\omega}$ | [[LVLH-本地垂直-本地水平坐标系]]相对于[[ECI-地心惯性坐标系]]的角速度矢量                                                                         |
+| 符号                    | 物理含义                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| $G$                   | 万有引力常数                                                                                                              |
+| $M$                   | 地球质量                                                                                                                |
+| $\mu$                 | 地球引力常数，$\mu=GM\approx 3.986004418\times 10^14\mathrm{m^3/s^2}$                                                      |
+| $\boldsymbol{r}_t$    | 目标卫星相对于地心的位置矢量（[[ECI-地心惯性系]]下），标量模长$r_t=\Vert\boldsymbol{r}_t\Vert$                                                 |
+| $\boldsymbol{r}_c$    | 追踪卫星相对于地心的位置矢量（[[ECI-地心惯性系]]下），标量模长$r_c=\Vert\boldsymbol{r}_c\Vert$                                                 |
+| $\boldsymbol{\rho}$   | 追踪卫星相对于目标卫星的相对位置矢量，满足$\boldsymbol{\rho}=\boldsymbol{r}_c-\boldsymbol{r}_t$，标量模长$\rho=\Vert \boldsymbol{\rho} \Vert$ |
+| $n$                   | 目标卫星的轨道平均角速度，圆轨道下为恒定值                                                                                               |
+| $\boldsymbol{\omega}$ | [[LVLH-本地垂直-本地水平系]]相对于[[ECI-地心惯性系]]的角速度矢量                                                                           |
 
-同时，采用$\mathrm{d}\,/\mathrm{d}\,t|_\boldsymbol{I},\,\mathrm{d}\,/\mathrm{d}\,t|_\boldsymbol{B}$分别表示[[ECI-地心惯性坐标系]]下的绝对时间导数算子和[[LVLH-本地垂直-本地水平坐标系]]下的相对时间导数算子。
+同时，采用$\mathrm{d}\,/\mathrm{d}\,t|_\boldsymbol{I},\,\mathrm{d}\,/\mathrm{d}\,t|_\boldsymbol{B}$分别表示[[ECI-地心惯性系]]下的绝对时间导数算子和[[LVLH-本地垂直-本地水平系]]下的相对时间导数算子。
 
-*注：圆轨道下，[[LVLH-本地垂直-本地水平坐标系]]相对于[[ECI-地心惯性坐标系]]的角速度矢量大小为轨道角速度$n$，方向沿$Z$轴正方向，因此$\boldsymbol{\omega}$在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的分量形式为$\boldsymbol{\omega}=[0,0,n]^\mathrm{T}$。同时，圆轨道下角速度恒定，因此角加速度$\boldsymbol{\dot{\omega}}=\mathrm{d}\,\boldsymbol{\omega}/\mathrm{d}\,t=\boldsymbol{0}$。*
+*注：圆轨道下，[[LVLH-本地垂直-本地水平系]]相对于[[ECI-地心惯性系]]的角速度矢量大小为轨道角速度$n$，方向沿$Z$轴正方向，因此$\boldsymbol{\omega}$在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的分量形式为$\boldsymbol{\omega}=[0,0,n]^\mathrm{T}$。同时，圆轨道下角速度恒定，因此角加速度$\boldsymbol{\dot{\omega}}=\mathrm{d}\,\boldsymbol{\omega}/\mathrm{d}\,t=\boldsymbol{0}$。*
 
 # CW方程推导
 
-航天器绕地球运动遵循[[二体问题]]动力学方程。其推导可以分为以下几个步骤：首先，基于[[二体问题]]建立目标与追踪航天器的绝对运动方程；其次，通过[[旋转矢量微分法则]]，将[[惯性与非惯性坐标系#惯性坐标系|惯性系]]下的绝对加速度差转换为[[LVLH-本地垂直-本地水平坐标系|LVLH]]旋转系下的相对加速度；进一步地，基于近距离假设对非线性引力项作一阶泰勒展开线性化；最后，整理得到[[LVLH-本地垂直-本地水平坐标系|LVLH]]系下的CW方程标量形式与矢量形式。
+卫星绕地球运动遵循[[二体问题]]动力学方程。其推导可以分为以下几个步骤：首先，基于[[二体问题]]建立目标与追踪卫星的绝对运动方程；其次，通过[[旋转矢量微分法则]]，将[[惯性与非惯性系#惯性坐标系|惯性系]]下的绝对加速度差转换为[[LVLH-本地垂直-本地水平系|LVLH]]旋转系下的相对加速度；进一步地，基于近距离假设对非线性引力项作一阶泰勒展开线性化；最后，整理得到[[LVLH-本地垂直-本地水平系|LVLH]]系下的CW方程标量形式与矢量形式。
 
 ## 二体问题绝对运动方程
 
-在[[ECI-地心惯性坐标系|ECI]]惯性系下，航天器绕地球的无摄动运动满足[[二体问题|二体动力学方程]]，其矢量形式为：
+在[[ECI-地心惯性系|ECI]]惯性系下，卫星绕地球的无摄动运动满足[[二体问题|二体动力学方程]]，其矢量形式为：
 
 $$
 \frac{\mathrm{d}^2\,\boldsymbol{r}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{I}} = -\frac{\mu}{r^3}\boldsymbol{r}
 \tag{1}
 $$
 
-其中，$\mu=G(M+m)\approx GM\in\mathbb{R}$，$\boldsymbol{r}\in\mathbb{R}^3$是惯性坐标系下航天器相对于地心的位置矢量，$r\in\mathbb{R}$为其对应的标量距离。
+其中，$\mu=G(M+m)\approx GM\in\mathbb{R}$，$\boldsymbol{r}\in\mathbb{R}^3$是惯性坐标系下卫星相对于地心的位置矢量，$r\in\mathbb{R}$为其对应的标量距离。
 
-### 目标航天器的绝对运动方程
+### 目标卫星的绝对运动方程
 
-对于圆轨道运动的目标航天器，其轨道半径$r_{t}\in\mathbb{R}$为常数，将其矢量形式$\boldsymbol{r}_{t}\in\mathbb{R}^3$（目标相对于地心的位置矢量）代入二体运动方程Eq. (1)：
+对于圆轨道运动的目标卫星，其轨道半径$r_{t}\in\mathbb{R}$为常数，将其矢量形式$\boldsymbol{r}_{t}\in\mathbb{R}^3$（目标相对于地心的位置矢量）代入二体运动方程Eq. (1)：
 
 $$
 \begin{aligned}
@@ -77,29 +77,29 @@ a_{\mathrm{centripetal}}=n^2r_t
 \tag{3}
 $$
 
-由于目标航天器的向心加速度完全由引力提供，则引力加速度的大小等于向心加速度大小，联立Eq. (1)和Eq. (3)得：
+由于目标卫星的向心加速度完全由引力提供，则引力加速度的大小等于向心加速度大小，联立Eq. (1)和Eq. (3)得：
 
 $$
 \left\Vert \frac{\mathrm{d}^2\,\boldsymbol{r}_t}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{I}} \right\Vert=\frac{\mu}{r_t^2}=n^2r_t
 \tag{4}
 $$
-整理得，目标航天器轨道角速度$n$可以写作：
+整理得，目标卫星轨道角速度$n$可以写作：
 
 $$
 n=\sqrt{\frac{\mu}{r_t^3}}
 \tag{5}
 $$
 
-因而，目标航天器的绝对运动方程可表述为：
+因而，目标卫星的绝对运动方程可表述为：
 
 $$
 \frac{\mathrm{d}^2\,\boldsymbol{r}_t}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{I}}=-n^2\boldsymbol{r}_t
 \tag{6}
 $$
 
-### 追踪航天器的绝对运动方程
+### 追踪卫星的绝对运动方程
 
-与之类似地，追踪航天器的绝对运动方程同样满足二体问题假设：
+与之类似地，追踪卫星的绝对运动方程同样满足二体问题假设：
 
 $$
 \begin{aligned}
@@ -108,7 +108,7 @@ $$
 \tag{7}
 $$
 
-同时，定义追踪航天器与目标航天器之间的相对距离矢量为$\boldsymbol{\rho}=\boldsymbol{r}_c-\boldsymbol{r}_t$，该差矢量在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的分量形式为$\boldsymbol{\rho}=[x,y,z]^\mathrm{T}$。对等式两侧在[[ECI-地心惯性坐标系|ECI]]惯性系下求二阶时间导数，得到绝对加速度的关系：
+同时，定义追踪卫星与目标卫星之间的相对距离矢量为$\boldsymbol{\rho}=\boldsymbol{r}_c-\boldsymbol{r}_t$，该差矢量在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的分量形式为$\boldsymbol{\rho}=[x,y,z]^\mathrm{T}$。对等式两侧在[[ECI-地心惯性系|ECI]]惯性系下求二阶时间导数，得到绝对加速度的关系：
 
 $$
 \begin{aligned}
@@ -118,7 +118,7 @@ $$
 \tag{8}
 $$
 
-将式Eq. (2)与Eq. (7)代入Eq. (8)中得到在[[ECI-地心惯性坐标系|ECI]]惯性系下的相对加速度方程：
+将式Eq. (2)与Eq. (7)代入Eq. (8)中得到在[[ECI-地心惯性系|ECI]]惯性系下的相对加速度方程：
 
 $$
 \begin{aligned}
@@ -129,13 +129,13 @@ $$
 \tag{9}
 $$
 
-其中，$\Delta\boldsymbol{g}$为引力差项，亦即[[ECI-地心惯性坐标系|惯性系]]下相对位置矢量$\boldsymbol{\rho}$的绝对二阶导数。
+其中，$\Delta\boldsymbol{g}$为引力差项，亦即[[ECI-地心惯性系|惯性系]]下相对位置矢量$\boldsymbol{\rho}$的绝对二阶导数。
 
 ### 旋转坐标系中的加速度转换
 
-式Eq. (9)中的$\mathrm{d}^2\,\boldsymbol{\rho}/\mathrm{d}\,t^2|_\boldsymbol{I}$是相对位置矢量在[[ECI-地心惯性坐标系|ECI]]惯性系下的绝对二阶导数，而工程中关注的是**LVLH 旋转系下的相对加速度**，因此需要通过[[旋转矢量微分法则#带平动的任意运动坐标系的二阶通用形式|带平动的二阶旋转矢量微分法则通用形式]]完成转换。
+式Eq. (9)中的$\mathrm{d}^2\,\boldsymbol{\rho}/\mathrm{d}\,t^2|_\boldsymbol{I}$是相对位置矢量在[[ECI-地心惯性系|ECI]]惯性系下的绝对二阶导数，而工程中关注的是**LVLH 旋转系下的相对加速度**，因此需要通过[[旋转矢量微分法则#带平动的任意运动坐标系的二阶通用形式|带平动的二阶旋转矢量微分法则通用形式]]完成转换。
 
-对于原点随目标航天器平动、同时随目标航天器旋转的[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系，相对位置矢量$\boldsymbol{\rho}$的绝对二阶导数与相对二阶导数的转换关系为：
+对于原点随目标卫星平动、同时随目标卫星旋转的[[LVLH-本地垂直-本地水平系|LVLH]]坐标系，相对位置矢量$\boldsymbol{\rho}$的绝对二阶导数与相对二阶导数的转换关系为：
 
 $$
 \frac{\mathrm{d}^2\,\boldsymbol{r}_c}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{I}}=\frac{\mathrm{d}^2\,\boldsymbol{r}_t}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{I}}+\frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{B}}+\boldsymbol{\dot{\omega}}\times \boldsymbol{\rho}+2\boldsymbol{\omega}\times\frac{\mathrm{d}\,\boldsymbol{\rho}}{\mathrm{d}\,t}\Bigg|_\boldsymbol{B}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{\rho})
@@ -152,7 +152,7 @@ $$
 
 ### 角加速度项简化
 
-目标航天器在圆轨道上运动，轨道角速度$n$为定值，因此[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系的角加速度$\boldsymbol{\dot{\omega}}=0$，进而Eq. (11)中的角加速度牵连项$\boldsymbol{\dot{\omega}}\times \boldsymbol{\rho}=0$。因此，Eq. (11)可以简化为：
+目标卫星在圆轨道上运动，轨道角速度$n$为定值，因此[[LVLH-本地垂直-本地水平系|LVLH]]坐标系的角加速度$\boldsymbol{\dot{\omega}}=0$，进而Eq. (11)中的角加速度牵连项$\boldsymbol{\dot{\omega}}\times \boldsymbol{\rho}=0$。因此，Eq. (11)可以简化为：
 
 $$
 \frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{B}}=
@@ -160,7 +160,7 @@ $$
 \tag{12}
 $$
 
-结合Eq. (8)和Eq. (9)，Eq. (12)可以进一步写作包含平动加速度项的形式，亦是[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的相对运动矢量方程：
+结合Eq. (8)和Eq. (9)，Eq. (12)可以进一步写作包含平动加速度项的形式，亦是[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的相对运动矢量方程：
 
 $$
 \frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_{\boldsymbol{B}}=
@@ -183,7 +183,7 @@ r_c^2&=\Vert \boldsymbol{r}_t+\boldsymbol{\rho} \Vert^2\\
 \tag{14}
 $$
 
-根据[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系的定义，$\boldsymbol{r}_t$在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的分量为$\boldsymbol{r}_t=[r_t,0,0]^\mathrm{T}$，相对位置矢量$\boldsymbol{\rho}$在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的分量为$\boldsymbol{\rho}=[x,y,z]^\mathrm{T}$，因此Eq. (14)中的点积$\boldsymbol{r}_t\cdot\boldsymbol{\rho}=r_t\,x$，代入Eq. (14)中得：
+根据[[LVLH-本地垂直-本地水平系|LVLH]]坐标系的定义，$\boldsymbol{r}_t$在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的分量为$\boldsymbol{r}_t=[r_t,0,0]^\mathrm{T}$，相对位置矢量$\boldsymbol{\rho}$在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的分量为$\boldsymbol{\rho}=[x,y,z]^\mathrm{T}$，因此Eq. (14)中的点积$\boldsymbol{r}_t\cdot\boldsymbol{\rho}=r_t\,x$，代入Eq. (14)中得：
 
 $$
 r_c^2=r_t^2+2r_t\,x+\rho^2
@@ -218,7 +218,7 @@ $$
 \tag{19}
 $$
 
-同时，$\boldsymbol{r}_c=\boldsymbol{r}_t+\boldsymbol{\rho}$在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的分量形式为：
+同时，$\boldsymbol{r}_c=\boldsymbol{r}_t+\boldsymbol{\rho}$在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的分量形式为：
 
 $$
 \boldsymbol{r}_c=\begin{bmatrix} r_t+x\\y\\z \end{bmatrix}
@@ -244,7 +244,7 @@ $$
 \frac{\mathrm{d}^2\,\boldsymbol{\rho}}{\mathrm{d}\,t^2}\Bigg|_\boldsymbol{B}=[\ddot{x},\ddot{y},\ddot{z}]^\mathrm{T}
 $$
 
-针对Eq. (13)中的科氏加速度项，向心牵连加速度项，目标航天器引力加速度项，在[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下作分量展开：
+针对Eq. (13)中的科氏加速度项，向心牵连加速度项，目标卫星引力加速度项，在[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下作分量展开：
 
 $$
 \begin{aligned}
@@ -259,7 +259,7 @@ $$
 
 #### 标量形式
 
-将Eq. (21)，Eq. (22)代入Eq. (13)中，并按照三轴方向分别合并，可得[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系下的CW方程标量形式为：
+将Eq. (21)，Eq. (22)代入Eq. (13)中，并按照三轴方向分别合并，可得[[LVLH-本地垂直-本地水平系|LVLH]]坐标系下的CW方程标量形式为：
 
 $$
 \left\{\begin{matrix}\begin{aligned}
@@ -282,7 +282,7 @@ $$
 \tag{24-1}
 $$
 
-显然，Eq. (24-1)的等号右侧即为Eq. (9)的右侧，即引力差项$\Delta\boldsymbol{g}$的负值，而后对此部分进行线性化处理。代入Eq. (19)与Eq. (20)，可以推得该引力差项在[[LVLH-本地垂直-本地水平坐标系|LVLH]]系下的分量形式：
+显然，Eq. (24-1)的等号右侧即为Eq. (9)的右侧，即引力差项$\Delta\boldsymbol{g}$的负值，而后对此部分进行线性化处理。代入Eq. (19)与Eq. (20)，可以推得该引力差项在[[LVLH-本地垂直-本地水平系|LVLH]]系下的分量形式：
 
 $$
 \begin{aligned}
@@ -300,14 +300,14 @@ $$
 \end{aligned}
 \tag{24-3}
 $$
-而后，将Eq. (24-3)分量形式转化为通用矢量形式。考虑[[LVLH-本地垂直-本地水平坐标系|LVLH]]系下的相对位置矢量$\boldsymbol{\rho}$的实际形式为：
+而后，将Eq. (24-3)分量形式转化为通用矢量形式。考虑[[LVLH-本地垂直-本地水平系|LVLH]]系下的相对位置矢量$\boldsymbol{\rho}$的实际形式为：
 
 $$
 n^2\,\boldsymbol{\rho} = n^2\,\begin{bmatrix} x\\ y\\ z \end{bmatrix} = \begin{bmatrix} n^2\,x\\ n^2\,y\\ n^2\,z \end{bmatrix}
 \tag{24-4}
 $$
 
-同时，径向分量的矢量可以表示为$\boldsymbol{\rho}\,\boldsymbol{\hat{x}} = x$，其中，$\boldsymbol{\hat{x}}$是[[LVLH-本地垂直-本地水平坐标系|LVLH]]坐标系$x$轴的单位矢量。进而有：
+同时，径向分量的矢量可以表示为$\boldsymbol{\rho}\,\boldsymbol{\hat{x}} = x$，其中，$\boldsymbol{\hat{x}}$是[[LVLH-本地垂直-本地水平系|LVLH]]坐标系$x$轴的单位矢量。进而有：
 
 $$
 3\,n^2\,(\boldsymbol{\rho}\,\boldsymbol{\hat{x}})\,\boldsymbol{\hat{x}} = 3\,n^2\,x\,\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} = \begin{bmatrix} 3\,n^2\,x\\ 0\\ 0 \end{bmatrix}
