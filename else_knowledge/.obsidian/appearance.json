@@ -1,12 +1,12 @@
 {
   "cssTheme": "",
   "theme": "system",
-  "baseFontSize": 16,
+  "baseFontSize": 18,
   "baseFontSizeAction": true,
   "monospaceFontFamily": "Source Code Pro,Andale Mono",
   "showViewHeader": false,
   "textFontFamily": "Times New Roman,SimSun",
-  "interfaceFontFamily": "Times New Roman,SimSun",
+  "interfaceFontFamily": "SimSun,Times New Roman",
   "enabledCssSnippets": [],
   "translucency": true
 }
